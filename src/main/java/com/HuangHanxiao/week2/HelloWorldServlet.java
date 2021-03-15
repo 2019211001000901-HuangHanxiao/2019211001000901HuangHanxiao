@@ -15,7 +15,7 @@ public class HelloWorldServlet extends HttpServlet {
         writer.println("ID:2019211001000901");
         Date d = new Date();
         String s = null;
-        writer.println("Date and Time "+d);
+        writer.println("Date and Time " +d);
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response){
     }
