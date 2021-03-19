@@ -12,13 +12,13 @@
 <body>
 <div>
     <p>New User Registration</p>
-    <form>
+    <form method="post" action="/2019211001000901HuangHanxiao_war_exploded/register">
         <table>
             <tr>
                 <td width=250px><input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="text" name="username" placeholder="Username" autocomplete="off"></td>
             </tr>
             <tr>
-                <td><input id="pwd" style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="password" name="Password" placeholder="password" minlength="8"></td>
+                <td><input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="password" name="Password" placeholder="password" minlength="8"></td>
             </tr>
             <tr>
                 <td><input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="email" name="email" placeholder="Email"></td>
