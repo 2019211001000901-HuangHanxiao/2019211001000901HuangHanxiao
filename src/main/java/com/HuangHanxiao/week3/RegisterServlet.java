@@ -23,7 +23,7 @@ public class RegisterServlet extends HttpServlet {
         PrintWriter writer= response.getWriter();
         writer.println("<br>username: "+username);
         writer.println("<br>password: "+Password);
-        writer.println("<br>email:  "+email);
+        writer.println("<br>email: "+email);
         writer.println("<br>gender: "+sex);
         writer.println("<br>birth date: "+date);
         writer.close();
