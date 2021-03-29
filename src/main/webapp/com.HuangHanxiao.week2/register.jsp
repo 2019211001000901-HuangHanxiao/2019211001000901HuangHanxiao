@@ -18,7 +18,7 @@
                 <td width=250px><input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="text" name="username" placeholder="Username" autocomplete="off"></td>
             </tr>
             <tr>
-                <td><input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="password" name="Password" placeholder="password" minlength="8"></td>
+                <td><input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="password" name="password" placeholder="password" minlength="8"></td>
             </tr>
             <tr>
                 <td><input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="email" name="email" placeholder="Email"></td>
@@ -30,7 +30,7 @@
             </tr>
             <tr>
                 <td>
-                    <input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="date" name="date" placeholder="Date of Birth(yyyy-mm-dd)">
+                    <input style="width: 250px; height:30px;background-color:#FEFFEF;border:0" type="date" name="birthdate" placeholder="Date of Birth(yyyy-mm-dd)">
                 </td>
             </tr>
             <tr>
