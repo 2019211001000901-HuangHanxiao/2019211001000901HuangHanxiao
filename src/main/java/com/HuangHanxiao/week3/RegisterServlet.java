@@ -83,6 +83,5 @@ public class RegisterServlet extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return;
     }
 }

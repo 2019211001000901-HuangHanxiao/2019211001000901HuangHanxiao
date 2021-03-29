@@ -13,7 +13,6 @@ import java.io.PrintWriter;
                 @WebInitParam(name="studentid",value="2019211001000901"),
         },loadOnStartup = 2
 )
-
 public class ConfigDemoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
