@@ -18,7 +18,7 @@ public class ConfigDemoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name =getServletConfig().getInitParameter("name");
         String id =getServletConfig().getInitParameter("studentid");
-        PrintWriter writer=response.getWriter();
+        PrintWriter writer =response.getWriter();
         writer.println("name:"+name);
         writer.println("studentid:"+id);
     }

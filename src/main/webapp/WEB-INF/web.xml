@@ -83,5 +83,5 @@
     <servlet-mapping>
         <servlet-name>ConfigDemoServlet</servlet-name>
         <url-pattern>/config</url-pattern>
-    </servlet-mapping>!-->
+    </servlet-mapping> !-->
 </web-app>
