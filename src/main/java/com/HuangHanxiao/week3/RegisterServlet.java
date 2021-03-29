@@ -58,7 +58,6 @@ public class RegisterServlet extends HttpServlet {
         String sql2="select * from usertable";
         String sql1="insert into usertable(username,password,email,sex,birthdate) values('"+username+"','"+password+"','"+email+"','"+sex+"',"+birthdate+") ";
         try {
-
             ResultSet rst= con.createStatement().executeQuery(sql1);
             while(rst.next()){
 
