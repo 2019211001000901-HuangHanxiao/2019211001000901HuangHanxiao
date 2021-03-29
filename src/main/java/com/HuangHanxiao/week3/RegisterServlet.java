@@ -67,7 +67,7 @@ public class RegisterServlet extends HttpServlet {
         }
         try {
 
-            ResultSet rs= con.createStatement().executeQuery(sql2);
+            ResultSet rs = con.createStatement().executeQuery(sql2);
             while(rs.next()){
                 out.println("<tr>");
                 out.println("<td>"+rs.getString("id")+"</td>");
