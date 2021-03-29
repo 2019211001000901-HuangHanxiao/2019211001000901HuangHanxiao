@@ -67,7 +67,6 @@ public class RegisterServlet extends HttpServlet {
             throwables.printStackTrace();
         }
         try {
-
             ResultSet rs = con.createStatement().executeQuery(sql2);
             while(rs.next()){
                 out.println("<tr>");
