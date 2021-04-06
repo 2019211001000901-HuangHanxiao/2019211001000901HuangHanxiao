@@ -15,12 +15,12 @@ import java.sql.SQLException;
 public class LoginServlet extends HttpServlet {
     Connection con=null;
     @Override
-    public void init() throws ServletException{
-        ServletContext context=getServletContext();
-        String driver=context.getInitParameter("driver");
-        String url=context.getInitParameter("url");
-        String username=context.getInitParameter("username");
-        String password=context.getInitParameter("password");
+    public void init() throws ServletException {
+
+        String driver = getServletContext().getInitParameter("driver");
+        String url = getServletContext().getInitParameter("url");
+        String username = getServletContext().getInitParameter("username");
+        String password = getServletContext().getInitParameter("password");
 
         try {
             Class.forName(driver);
@@ -29,7 +29,9 @@ public class LoginServlet extends HttpServlet {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
+
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
