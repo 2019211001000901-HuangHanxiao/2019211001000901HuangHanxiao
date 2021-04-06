@@ -16,10 +16,11 @@ public class LoginServlet extends HttpServlet {
     Connection con=null;
     @Override
     public void init() throws ServletException{
-        String driver=getServletConfig().getInitParameter("driver");
-        String url=getServletConfig().getInitParameter("url");
-        String username=getServletConfig().getInitParameter("username");
-        String password=getServletConfig().getInitParameter("password");
+        ServletContext context=getServletContext();
+        String driver=context.getInitParameter("driver");
+        String url=context.getInitParameter("url");
+        String username=context.getInitParameter("username");
+        String password=context.getInitParameter("password");
 
         try {
             Class.forName(driver);
