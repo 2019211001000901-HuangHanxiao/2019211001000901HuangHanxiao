@@ -118,6 +118,15 @@
         <servlet-name>RedirectServlet</servlet-name>
         <servlet-class>com.HuangHanxiao.week6.RedirectServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>com.HuangHanxiao.week6.SearchServlet</servlet-class>
+
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RedirectServlet</servlet-name>
         <url-pattern>/redirect</url-pattern>
