@@ -47,7 +47,7 @@ public class UserDao implements IUserDao {
             user.setSex(rs.getString("sex"));
             user.setBirthdate(rs.getDate("birthdate"));
         }
-        return  user;
+        return user;
     }
 
     @Override
