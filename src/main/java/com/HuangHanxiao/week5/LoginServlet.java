@@ -1,5 +1,8 @@
 package com.HuangHanxiao.week5;
 
+import com.HuangHanxiao.dao.UserDao;
+import com.HuangHanxiao.model.User;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -34,7 +37,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 
     @Override
@@ -42,7 +45,24 @@ public class LoginServlet extends HttpServlet {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         PrintWriter out=response.getWriter();
-        String sql="select * from usertable where username='"+username+"' and password='"+password+"'";
+        UserDao userDao=new UserDao();
+        try {
+            User user=userDao.findByUsernamePassword(con,username,password);
+            if(user!=null){
+                request.setAttribute("user",user);
+                request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
+            }else {
+                request.setAttribute("message","Username or Password Error!!!");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
+            }
+
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        /*String sql="select * from usertable where username='"+username+"' and password='"+password+"'";
         try {
             ResultSet rst= con.createStatement().executeQuery(sql);
             if(rst.next()){
@@ -64,6 +84,6 @@ public class LoginServlet extends HttpServlet {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
+        }*/
     }
 }

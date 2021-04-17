@@ -127,6 +127,15 @@
         <servlet-name>SearchServlet</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>com.HuangHanxiao.controller.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>RedirectServlet</servlet-name>
         <url-pattern>/redirect</url-pattern>
@@ -148,5 +157,8 @@
         <param-name>password</param-name>
         <param-value>admin123456789</param-value>
     </context-param>
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 
 </web-app>
