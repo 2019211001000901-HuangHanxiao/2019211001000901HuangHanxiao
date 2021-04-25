@@ -131,6 +131,7 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>com.HuangHanxiao.controller.HomeServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
