@@ -12,8 +12,6 @@
 <%
     User u=(User) session.getAttribute("user");
 %>
-
-
 <form method="post" action="updateUser">
     <input type="hidden" name="id" value="<%=u.getId()%>">
     username<input type="text" name="username" value="<%=u.getUsername()%>"><br/>

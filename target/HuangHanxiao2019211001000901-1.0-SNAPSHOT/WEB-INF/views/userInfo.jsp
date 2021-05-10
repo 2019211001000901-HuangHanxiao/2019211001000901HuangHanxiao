@@ -29,7 +29,7 @@ User u=(User) session.getAttribute("user");
     <tr></tr>
         <td>Gender:</td><td><%=u.getSex()%></td>
     <tr></tr>
-        <td>Birth date:</td><td><%=u.getBirthdate()%></td>
+        <td>Birth Date:</td><td><%=u.getBirthdate()%></td>
     <tr></tr>
     <td><a href="updateUser">Update</a></td>
     <tr></tr>

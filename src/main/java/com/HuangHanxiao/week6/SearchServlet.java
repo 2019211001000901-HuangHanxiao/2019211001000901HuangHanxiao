@@ -10,7 +10,7 @@ public class SearchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String txt = request.getParameter("txt");
         String search = request.getParameter("search");
-        if (search.equals("Baidu")) {
+        if (search.equals("baidu")) {
             if (txt.equals(null)) {
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else {
