@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -22,28 +23,37 @@ public class UpdateUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id=request.getParameter("id");
+        int id= Integer.parseInt(request.getParameter("id"));
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         String email=request.getParameter("email");
         String sex=request.getParameter("sex");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date birthdate = null;
         try {
-            System.out.println(request.getParameter("birthdate").trim());
+            SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+            Date birthdate=sdf.parse(request.getParameter("birthdate"));
+            User user=new User();
+            user.setId(id);
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setSex(sex);
+            user.setBirthdate(birthdate);
+            UserDao userDao=new UserDao();
+            Connection con = (Connection) getServletContext().getAttribute("con");
+            try {
+                if(userDao.updateUser(con,user)!=0) {
+                    User user1=userDao.findByUsernamePassword(con,username,password);
+                    HttpSession session=request.getSession();
+                    session.setMaxInactiveInterval(10);
+                    session.setAttribute("user",user1);
+                    request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request, response);
+                }
+            } catch (SQLException throwable) {
+                throwable.printStackTrace();
+            }
 
-            birthdate = simpleDateFormat.parse(request.getParameter("birthdate").trim());
         } catch (ParseException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
-        User u = new User(Integer.valueOf(id), username, password, email, sex, birthdate);
-        UserDao userDao = new UserDao();
-        try {
-            userDao.updateUser((Connection) getServletContext().getAttribute("con"), u);
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-        System.out.println(birthdate);
-        request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request,response);
     }
 }
