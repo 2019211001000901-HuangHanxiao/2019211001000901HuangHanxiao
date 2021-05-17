@@ -13,7 +13,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "AddProductServlet", value = "/admin/addProduct")
+@WebServlet(name = "AddProductServlet", value  = "/admin/addProduct")
 @MultipartConfig(maxFileSize = 16177215)
 public class AddProductServlet extends HttpServlet {
     Connection con=null;
