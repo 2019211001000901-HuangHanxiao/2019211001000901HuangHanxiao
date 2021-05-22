@@ -88,7 +88,7 @@ public class Category {
         while (rs.next()){
            categoryName=rs.getString("categoryName");
         }
-        return  categoryName;
+        return categoryName;
     }
 
 }
