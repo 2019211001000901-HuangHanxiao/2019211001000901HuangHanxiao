@@ -98,7 +98,7 @@
 						<%
 							int n=o.getPaymentId();
 							String paymentType=com.HuangHanxiao.model.Payment.findByPaymentId(con,n);
-							 %>
+						%>
 								<p class="cart_total_price"><%=paymentType %></p>
 							</td>
 						<td><button class="btn btn-default update" id="${o.orderId }">Details</button></td>
