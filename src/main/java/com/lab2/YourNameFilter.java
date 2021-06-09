@@ -8,6 +8,7 @@ import java.io.IOException;
 public class YourNameFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }
+
     public void destroy() {
     }
 
