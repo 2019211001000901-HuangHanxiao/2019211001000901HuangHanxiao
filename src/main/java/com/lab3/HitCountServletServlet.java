@@ -23,7 +23,6 @@ public class HitCountServletServlet extends HttpServlet {
         out.println("</html></body>");
         con++;
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
